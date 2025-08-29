@@ -126,5 +126,19 @@ Passing score: **≥ 75 points**
   * `docker-compose.yml`, `.env.example`
   * Updated README with instructions and screenshots
 
+Additional Requirement — Screen Recording
+
+You must also **record your screen** (MP4 format) to demonstrate the full workflow.  
+This video must show:
+
+1. Starting the services with `docker compose up --build`
+2. Checking both health endpoints (`/health`)
+3. Uploading a video file through the API
+4. The API returning mocked steps and sending them to the callback
+5. The Interface saving the steps in `received.json`
+6. Opening `http://localhost:4000/guides/67` and showing the 3 mocked steps displayed on the web page
+
+The video file (MP4) must then be **sent to Tarun** as proof of your workflow.
+
 Estimated time: **3–4 hours**
 
