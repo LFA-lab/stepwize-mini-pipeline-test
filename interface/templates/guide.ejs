@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide <%= guide_id %> - Video Steps</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #eee;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .header p {
+        margin: 8px 0 0 0;
+        font-size: 16px;
+        color: #666;
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .step-card {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .step-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-color: #667eea;
+      }
+
+      .step-card h3 {
+        margin: 15px 0 15px 0;
+        color: #495057;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .step-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 10px 0;
+        background: #e9ecef;
+      }
+
+      .step-card p {
+        color: #6c757d;
+        font-size: 14px;
+        margin: 15px 0 0 0;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Guide <%= guide_id %></h1>
+        <p>Video Processing Steps</p>
+      </div>
+      <div class="steps-grid">
+        <% steps.forEach((step, index) => { %>
+          <div class="step-card">
+            <h3><%= step.title %></h3>
+            <img src="<%= step.image_url %>" alt="<%= step.title %>" />
+            <p>Step - <%= step.index %><br>Time Stamp - <%= step.second %>s</p>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
